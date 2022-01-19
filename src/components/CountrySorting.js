@@ -1,6 +1,5 @@
 import React from 'react'
-import { Input } from 'semantic-ui-react'
-import { Select } from 'semantic-ui-react'
+import { Input, Select, Grid } from 'semantic-ui-react'
 
 const countryOptions = [
   { key: 'af', value: 'africa', text: 'Africa' },
@@ -13,17 +12,24 @@ const countryOptions = [
 const CountrySorting = ({ handleSearch, handleFilter }) => {
   return (
     <>
-      <Input
-        icon='search'
-        iconPosition='left'
-        placeholder='Search a country...'
-        onChange={handleSearch}
-      />
-      <Select
-        placeholder='Filter by Region'
-        options={countryOptions}
-        onChange={handleFilter}
-      />
+      <Grid stackable columns={2} container>
+        <Grid.Column>
+          <Input
+            icon='search'
+            iconPosition='left'
+            placeholder='Search a country...'
+            onChange={handleSearch}
+          />
+        </Grid.Column>
+
+        <Grid.Column textAlign='right'>
+          <Select
+            placeholder='Filter by Region'
+            options={countryOptions}
+            onChange={handleFilter}
+          />
+        </Grid.Column>
+      </Grid>
     </>
   )
 }

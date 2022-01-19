@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { listCountries } from '../redux/actions/countriesActions'
 import CountryComponent from './CountryComponent'
 import Header from './Header'
@@ -9,7 +9,6 @@ const CountriesPage = () => {
   const [searchQuery, setSearchQuery] = useState('')
   const [filterQuery, setFilterQuery] = useState('')
 
-  // const countries = useSelector((state) => state.allCountries.countries)
   const dispatch = useDispatch()
 
   useEffect(() => {

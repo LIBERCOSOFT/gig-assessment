@@ -1,13 +1,22 @@
-import React from "react";
+import React from 'react'
+import { Grid, Button, Icon } from 'semantic-ui-react'
 
 const Header = () => {
   return (
-    <div className="ui fixed menu">
-      <div className="ui container center">
-        <h2>Where in the world?</h2>
-      </div>
-    </div>
-  );
-};
+    <>
+      <Grid stackable columns={2} container style={{ 'padding-top': '5px' }}>
+        <Grid.Column>
+          <h2>Where in the World?</h2>
+        </Grid.Column>
+        <Grid.Column textAlign='right'>
+          <Button icon labelPosition='left'>
+            <Icon name='moon outline' />
+            Dark Mode
+          </Button>
+        </Grid.Column>
+      </Grid>
+    </>
+  )
+}
 
-export default Header;
+export default Header
